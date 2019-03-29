@@ -28,12 +28,12 @@ docker build --rm -f Dockerfile -t twistedcont:latest .
 
 ### Start the container:
 ```
-export id="$(docker run -t -d twistedcont:latest)"
+export con_id="$(docker run -t -d twistedcont:latest)"
 ```
 
 ### Connect to the bash of a running container:
 ```
-docker exec -i -t $id /bin/bash
+docker exec -i -t $con_id /bin/bash
 ```
 
 ### Kill all running containers:
