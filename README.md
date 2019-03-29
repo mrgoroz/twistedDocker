@@ -20,18 +20,32 @@ sudo usermod -aG docker $USER
 su -
 docker ps
 ```
+
 ### Build the image:
 ```
 docker build --rm -f Dockerfile -t twistedcont:latest .
 ```
+
+### Start the container:
+```
+export id="$(docker run -t -d twistedcont:latest)"
+```
+
+### Connect to the bash of a running container:
+```
+docker exec -i -t $id /bin/bash
+```
+
 ### Kill all running containers:
 ```
 docker kill $(docker ps -q)
 ```
+
 ### Delete all stopped containers:
 ```
 docker rm $(docker ps -a -q)
 ```
+
 ### Delete all images:
 ```
 docker rmi $(docker images -q)
