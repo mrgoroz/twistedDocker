@@ -1,5 +1,5 @@
 FROM python:latest
-COPY ./twisted-network-programming-essentials-examples ./twist
+# COPY src_in_host dst_in_docker
 RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y"]
 RUN ["pip3", "install", "twisted"]
